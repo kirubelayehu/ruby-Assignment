@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpecialtyFoods</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="<%= yield(:background) %>">
+
+      <div class="ui menu">
+        <div class="header item">
+          Specialty Foods Market
+        </div>
+        <div class="right menu">
+          <a class="item" href='/'>
+            Home
+          </a>
+          <a class="item" href='/products'>
+            Products
+          </a>
+        </div>
+      </div>
+
+      <div id='flash' class='ui container'>
+        <%= flash[:alert] %>
+        <%= flash[:notice] %>
+      </div>
+
+      <div class='ui container'>
+        <%= yield %>
+      </div>
+
+    </div>
+  </body>
+</html>
